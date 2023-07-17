@@ -22,4 +22,11 @@ class StationTest {
         assertThatThrownBy(() -> new Station("역"))
             .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    @DisplayName("DevOps 테스트를 위한 실패하는 테스트")
+    void fail_test() {
+        assertThatThrownBy(() -> new Station("잠실역"))
+            .isInstanceOf(IllegalArgumentException.class);
+    }
 }
