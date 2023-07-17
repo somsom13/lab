@@ -24,15 +24,20 @@ jobs:
         with:
           java-version: '17'
           distribution: zulu
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
-        shell: bash
+      - name: grant execute permission for gradlew
+        run: chmod +x gradlew
       
-      - name: Build with Gradle
-        run: ./gradlew --info test
-        shell: bash
-        
-      - name: Comment on test result 
-        uses: EnricoMi/publish-unit-test-result-action@v1
+      - name: gradle build
+        run: ./gradlew build
+      
+      - name: publish unit test results
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
+        with:
+          files: build/test-results/test/TEST-*.xml
+      
+      - name: add comments to a pull request
+        uses: mikepenz/action-junit-report@v3
+        if: always()
+        with:
+          report_paths: build/test-results/test/TEST-*.xml
