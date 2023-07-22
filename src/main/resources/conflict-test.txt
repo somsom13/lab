@@ -1,4 +1,4 @@
-Text from #4-first-git
+Text from #4-second-git branch
 
 Line1
 Line2
