@@ -10,14 +10,14 @@ class StationTest {
 
     @Test
     @DisplayName("DevOps를 위한 Station 도메인 생성 테스트")
-    public void createStation_success() {
+    void createStation_success() {
         // when, then
         assertDoesNotThrow(() -> new Station("잠실역"));
     }
 
     @Test
     @DisplayName("DevOps를 위한 Station 도메인 실패 테스트")
-    public void createStation_fail() {
+    void createStation_fail() {
         // when, then
         assertThatThrownBy(() -> new Station("역"))
             .isInstanceOf(IllegalArgumentException.class);
