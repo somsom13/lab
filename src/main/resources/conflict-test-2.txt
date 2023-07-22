@@ -1,1 +1,1 @@
-여러 개의 conflict가 생기는 상황에서 rebase 확인하기
+rebase 과정에서 2번째 conflict 해결
