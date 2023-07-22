@@ -1,3 +1,7 @@
+rebase 과정에서 첫 번째 conflict 해결
+
 Line1
 Line2
 Line3
+
+PR을 올리기 전에 (push하기 전에) rebase를 하는 상황 만들기
